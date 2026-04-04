@@ -1,0 +1,29 @@
+# Virtual environments
+venv/
+venv_gui/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Runtime files
+result.json
+*.log
+
+# Secrets
+.env
+.env.*
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
