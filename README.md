@@ -77,7 +77,7 @@ PASSWORD_ORDER = [0, 1, 2]
 - Python 3.10+ recommended.
 - Linux, macOS, or Windows.
 - Webcam connected and accessible.
-- A trained `gesture_classifier.h5` model file.
+- A trained `gesture_classifier.h5` model file that is only trained on "wave", "peace sign", "fist" gestures.
 - An ngrok account and auth token if you want to expose the Flask API publicly. ngrok supports exposing local Flask development servers through a public tunnel, including via its Python SDK. [4]
 
 ## Installation
@@ -131,7 +131,7 @@ ngrok.set_auth_token("YOUR_NGROK_AUTH_TOKEN")
 ```
 
 Important security note:
-- Do not commit your real ngrok token to GitHub.
+- Do not commit your real ngrok token to GitHub. Attention!!!!!!
 - If a token was ever exposed publicly, rotate it in your ngrok dashboard before using the repository again.
 
 ## Run the Project
@@ -242,53 +242,10 @@ python gesture_gui_http.py
 
 ## Recommended GitHub Files
 
-### `.gitignore`
-A Python project should ignore virtual environments, bytecode caches, and build/test artifacts; GitHub’s Python gitignore template includes the common Python cache and environment patterns, and typical Flask projects also ignore instance and coverage artifacts. [5][6]
-
-This repository includes a practical `.gitignore` that excludes:
-- virtual environments,
-- Python cache files,
-- editor settings,
-- runtime JSON outputs,
-- model checkpoints you do not want to publish by default.
-
 ### `requirements.txt`
 The included requirements file contains the Python packages needed to run the GUI and API.
 
-## Suggested Git Commands
 
-After formatting your project files, use:
-
-```bash
-git init
-git add .
-git commit -m "Initial commit: gesture password access control project"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-git push -u origin main
-```
-
-If the repository already exists remotely, skip `git init` and just add, commit, and push.
-
-## Recommended Repository Description
-
-Use this as your GitHub repository description:
-
-> Gesture-based access control system using MediaPipe, GRU gesture classification, Flask API, ngrok, and a Tkinter desktop GUI.
-
-## Recommended Topics
-
-Use these GitHub topics:
-- `python`
-- `mediapipe`
-- `tensorflow`
-- `flask`
-- `opencv`
-- `tkinter`
-- `gesture-recognition`
-- `access-control`
-- `human-computer-interaction`
-- `ngrok`
 
 ## Troubleshooting
 
@@ -312,13 +269,3 @@ Use these GitHub topics:
 - Every new tunnel may generate a new public URL unless you use a reserved domain.
 - Update `API_URL` in `gesture_gui_http.py` whenever the tunnel URL changes. ngrok tunnels commonly expose a local app through a temporary public address. [4][7]
 
-## Notes for Publishing
-
-Before pushing to GitHub:
-- Remove or rotate any exposed tokens.
-- Decide whether `gesture_classifier.h5` should be uploaded, shared through Releases, or downloaded separately.
-- Keep `result.json` out of version control because it is runtime-generated.
-
-## License
-
-Choose a license before publishing. MIT is common for academic/demo code if you want others to reuse it with attribution.
