@@ -2,6 +2,11 @@
 
 Gesture-based access control prototype using MediaPipe hand tracking, a GRU classifier, Flask, and a desktop GUI.
 
+<p align="center">
+  <img src="./project-9.png" alt="" width="900">
+</p>
+
+
 ## Overview
 
 This project implements a gesture-based password system that combines computer vision, sequence modeling, and a local desktop interface.  
